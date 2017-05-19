@@ -20,5 +20,7 @@ namespace PetClinicLocal
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainPage>();
         }
+
+
     }
 }
