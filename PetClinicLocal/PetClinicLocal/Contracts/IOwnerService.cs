@@ -3,7 +3,7 @@ using PetClinicLocal.Models;
 
 namespace PetClinicLocal.Contracts
 {
-    public interface IOwnerRepository
+    public interface IOwnerService
     {
         void AddOwner(OwnerUser user);
         OwnerUser UpdateOwnerUser(OwnerUser user);

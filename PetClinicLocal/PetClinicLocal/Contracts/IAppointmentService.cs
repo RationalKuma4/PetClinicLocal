@@ -3,7 +3,7 @@ using PetClinicLocal.Models;
 
 namespace PetClinicLocal.Contracts
 {
-    public interface IAppointmentRepository
+    public interface IAppointmentService
     {
         void AddAppointment(Appointment appointment);
         Appointment UpdateAppointment(Appointment appointment);

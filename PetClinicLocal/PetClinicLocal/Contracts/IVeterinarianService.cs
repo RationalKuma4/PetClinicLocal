@@ -3,7 +3,7 @@ using PetClinicLocal.Models;
 
 namespace PetClinicLocal.Contracts
 {
-    public interface IVeterinarianRepository
+    public interface IVeterinarianService
     {
         void AddVeterinarian(Veterinarian veterinarian);
         Veterinarian UpdateVeterinarian(Veterinarian veterinarian);

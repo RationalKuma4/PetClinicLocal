@@ -7,11 +7,11 @@ using Xamarin.Forms;
 
 namespace PetClinicLocal.Data
 {
-    public class PetClinicDatabase : IOwnerRepository, IPetRepository, IVeterinarianRepository, IAppointmentRepository
+    public class PetClinicDatabaseService : IOwnerService, IPetService, IVeterinarianService, IAppointmentService
     {
         private readonly SQLiteConnection _connection;
 
-        public PetClinicDatabase()
+        public PetClinicDatabaseService()
         {
             _connection = DependencyService.Get<ISqLite>().GetConnection();
             CreateDataBaseTables();
