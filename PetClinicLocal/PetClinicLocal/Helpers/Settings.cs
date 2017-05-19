@@ -24,36 +24,18 @@ namespace PetClinicLocal.Helpers
         private const string SettingsKey = "settings_key";
         private static readonly string SettingsDefault = string.Empty;
 
-        private const string UserNameKey = "username_key";
-        private static readonly string UserNameDefault = string.Empty;
-
-        private const string PasswordKey = "pass_key";
-        private static readonly string PasswordDefault = "";
-
         #endregion
 
-
-        public static string UserName
-        {
-            get { return AppSettings.GetValueOrDefault(UserNameKey, UserNameDefault); }
-            set { AppSettings.AddOrUpdateValue(UserNameKey, value); }
-        }
-
-        public static string PassKey
-        {
-            get { return AppSettings.GetValueOrDefault(PasswordKey, PasswordDefault); }
-            set { AppSettings.AddOrUpdateValue(PasswordKey, value); }
-        }
 
         public static string GeneralSettings
         {
             get
             {
-                return AppSettings.GetValueOrDefault(SettingsKey, SettingsDefault);
+                return AppSettings.GetValueOrDefault<string>(SettingsKey, SettingsDefault);
             }
             set
             {
-                AppSettings.AddOrUpdateValue(SettingsKey, value);
+                AppSettings.AddOrUpdateValue<string>(SettingsKey, value);
             }
         }
 
