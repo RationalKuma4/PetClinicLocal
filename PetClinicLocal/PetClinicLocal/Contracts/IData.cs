@@ -2,7 +2,7 @@
 
 namespace PetClinicLocal.Contracts
 {
-    public interface ISqLite
+    public interface IData
     {
         SQLiteConnection GetConnection();
     }

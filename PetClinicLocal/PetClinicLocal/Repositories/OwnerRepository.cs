@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using PetClinicLocal.Contracts;
 using PetClinicLocal.Models;
 using PetClinicLocal.Repositories.IOwner;
@@ -38,6 +39,13 @@ namespace PetClinicLocal.Repositories
         public OwnerUser RegresaUsuario(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public OwnerUser LoginUser(string usuario, string password)
+        {
+            var owner = _service.GetOwnerUsers()
+                .Where(u => u.UserName.Equals(usuario) && u.Password.Equals(password));
+            return owner.First();
         }
     }
 }

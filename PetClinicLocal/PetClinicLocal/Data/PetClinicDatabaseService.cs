@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using PetClinicLocal.Contracts;
 using PetClinicLocal.Models;
 using SQLite.Net;
 using Xamarin.Forms;
+using System.Linq;
 
 namespace PetClinicLocal.Data
 {
@@ -13,7 +13,7 @@ namespace PetClinicLocal.Data
 
         public PetClinicDatabaseService()
         {
-            _connection = DependencyService.Get<ISqLite>().GetConnection();
+            _connection = DependencyService.Get<IData>().GetConnection();
             CreateDataBaseTables();
         }
 

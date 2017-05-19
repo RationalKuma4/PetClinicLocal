@@ -7,5 +7,6 @@ namespace PetClinicLocal.Repositories.IOwner
     {
         IEnumerable<OwnerUser> RegresaUsuarios(OwnerUser user);
         OwnerUser RegresaUsuario(int id);
+        OwnerUser LoginUser(string usuario, string password);
     }
 }

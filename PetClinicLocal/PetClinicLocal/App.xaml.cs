@@ -6,6 +6,7 @@ using PetClinicLocal.Repositories.IAppointment;
 using PetClinicLocal.Repositories.IOwner;
 using PetClinicLocal.Repositories.IPet;
 using PetClinicLocal.Repositories.IVeterinarian;
+using PetClinicLocal.Views.Usuario;
 using Prism.Unity;
 using PetClinicLocal.Views;
 using Xamarin.Forms;
@@ -19,8 +20,7 @@ namespace PetClinicLocal
         protected override void OnInitialized()
         {
             InitializeComponent();
-
-            NavigationService.NavigateAsync(ViewsNames.MainPageName);
+            NavigationService.NavigateAsync(ViewsNames.LoginPageName);
         }
 
         protected override void RegisterTypes()
@@ -34,6 +34,9 @@ namespace PetClinicLocal
         {
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainPage>();
+
+            Container.RegisterTypeForNavigation<LoginPage>();
+            Container.RegisterTypeForNavigation<ResgisterUserPage>();
         }
 
         private void RegisterServices()
@@ -48,10 +51,13 @@ namespace PetClinicLocal
         {
             Container.RegisterType<IOwnerWriter, OwnerRepository>();
             Container.RegisterType<IOwnerReader, OwnerRepository>();
+
             Container.RegisterType<IPetWriter, PetRepository>();
             Container.RegisterType<IPetReader, PetRepository>();
+
             Container.RegisterType<IVeterinarianWriter, VeterinarianRepository>();
             Container.RegisterType<IVeterinarianReader, VeterinarianRepository>();
+
             Container.RegisterType<IAppointmentWriter, AppointmentRepository>();
             Container.RegisterType<IAppointmentReader, AppointmentRepository>();
         }
