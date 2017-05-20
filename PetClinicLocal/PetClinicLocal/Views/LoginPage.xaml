@@ -32,7 +32,8 @@
            VerticalOptions="FillAndExpand"
            HorizontalOptions="FillAndExpand"
            Grid.Row="1"
-           Grid.Column="0"/>
+           Grid.Column="0"
+           Text="{Binding Username}"/>
 
     <Entry Placeholder="Contraseña"
            PlaceholderColor="Black"
@@ -41,7 +42,8 @@
            HorizontalOptions="FillAndExpand"
            IsPassword="True"
            Grid.Row="2"
-           Grid.Column="0"/>
+           Grid.Column="0"
+           Text="{Binding Password}"/>
 
     <Button Text="Acceder"
             BorderRadius="20"

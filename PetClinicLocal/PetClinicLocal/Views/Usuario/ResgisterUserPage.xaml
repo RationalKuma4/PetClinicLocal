@@ -1,6 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PetClinicLocal.Views.Usuario.ResgisterUserPage">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+             x:Class="PetClinicLocal.Views.Usuario.ResgisterUserPage"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             Title="Registro">
+  <StackLayout Spacing="15"
+               Margin="10"
+               Padding="20"
+               VerticalOptions="FillAndExpand"
+               HorizontalOptions="FillAndExpand"
+               Orientation="Vertical">
+    <Entry PlaceholderColor="Black"
+           Placeholder="Nombre"
+           FontAttributes="Italic"
+           HorizontalTextAlignment="Start"
+           Text="{Binding Nombre}"/>
+    <Entry PlaceholderColor="Black"
+           Placeholder="Usuario"
+           FontAttributes="Italic"
+           HorizontalTextAlignment="Start"
+           Text="{Binding Username}"/>
+    <Entry PlaceholderColor="Black"
+           Placeholder="Correo Electronico"
+           FontAttributes="Italic"
+           HorizontalTextAlignment="Start"
+           Text="{Binding Email}"/>
+    <Entry PlaceholderColor="Black"
+           Placeholder="Contraseña"
+           FontAttributes="Italic"
+           HorizontalTextAlignment="Start"
+           IsPassword="True"
+           Text="{Binding Password}"/>
+    <Entry PlaceholderColor="Black"
+           Placeholder="Repite contraseña"
+           FontAttributes="Italic"
+           HorizontalTextAlignment="Start"
+           IsPassword="True"
+           Text="{Binding PasswordRep}"/>
+    <Button Text="Registrar"
+            BorderRadius="20"
+            BorderColor="Firebrick"
+            TextColor="Black"
+            Command="{Binding RegisterUserCommand}"/>
+  </StackLayout>
 </ContentPage>

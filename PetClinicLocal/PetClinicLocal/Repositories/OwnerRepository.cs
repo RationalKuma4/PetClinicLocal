@@ -18,7 +18,7 @@ namespace PetClinicLocal.Repositories
 
         public void RegistraUsuario(OwnerUser owner)
         {
-            throw new NotImplementedException();
+            _service.AddOwner(owner);
         }
 
         public OwnerUser ModificaUsuario(OwnerUser user)
@@ -45,7 +45,7 @@ namespace PetClinicLocal.Repositories
         {
             var owner = _service.GetOwnerUsers()
                 .Where(u => u.UserName.Equals(usuario) && u.Password.Equals(password));
-            return owner.First();
+            return owner.FirstOrDefault();
         }
     }
 }

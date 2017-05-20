@@ -9,6 +9,9 @@ using PetClinicLocal.Repositories.IVeterinarian;
 using PetClinicLocal.Views.Usuario;
 using Prism.Unity;
 using PetClinicLocal.Views;
+using PetClinicLocal.Views.Cita;
+using PetClinicLocal.Views.Mascota;
+using PetClinicLocal.Views.Veterinario;
 using Xamarin.Forms;
 
 namespace PetClinicLocal
@@ -20,7 +23,8 @@ namespace PetClinicLocal
         protected override void OnInitialized()
         {
             InitializeComponent();
-            NavigationService.NavigateAsync(ViewsNames.LoginPageName);
+            //NavigationService.NavigateAsync(ViewsNames.LoginPageName);
+            NavigationService.NavigateAsync(ViewsNames.MasterMenuPageName);
         }
 
         protected override void RegisterTypes()
@@ -37,6 +41,11 @@ namespace PetClinicLocal
 
             Container.RegisterTypeForNavigation<LoginPage>();
             Container.RegisterTypeForNavigation<ResgisterUserPage>();
+
+            Container.RegisterTypeForNavigation<MasterMenuPage>();
+            Container.RegisterTypeForNavigation<MainCitaPage>();
+            Container.RegisterTypeForNavigation<MainMascotaPage>();
+            Container.RegisterTypeForNavigation<MainVeterinarioPage>();
         }
 
         private void RegisterServices()

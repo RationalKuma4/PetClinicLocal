@@ -46,6 +46,7 @@
     <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\Enums\AppointmentType.cs" />
     <Compile Include="Models\Enums\PetType.cs" />
+    <Compile Include="Models\MasterPageItem.cs" />
     <Compile Include="Models\OwnerUser.cs" />
     <Compile Include="Models\Pet.cs" />
     <Compile Include="Models\Veterinarian.cs" />
@@ -64,12 +65,25 @@
     <Compile Include="Repositories\VeterinarianRepository.cs" />
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
-    <Compile Include="ViewModels\Usuario\ResgisterUserViewModel.cs" />
+    <Compile Include="ViewModels\MasterMenuPageViewModel.cs" />
+    <Compile Include="ViewModels\Usuario\ResgisterUserPageViewModel.cs" />
+    <Compile Include="Views\Cita\MainCitaPage.xaml.cs">
+      <DependentUpon>MainCitaPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Mascota\MainMascotaPage.xaml.cs">
+      <DependentUpon>MainMascotaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MasterMenuPage.xaml.cs">
+      <DependentUpon>MasterMenuPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Usuario\ResgisterUserPage.xaml.cs">
       <DependentUpon>ResgisterUserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Veterinario\MainVeterinarioPage.xaml.cs">
+      <DependentUpon>MainVeterinarioPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ViewsNames.cs" />
   </ItemGroup>
@@ -181,12 +195,31 @@
     <Folder Include="ViewModels\Cita\" />
     <Folder Include="ViewModels\Mascota\" />
     <Folder Include="ViewModels\Veterinario\" />
-    <Folder Include="Views\Cita\" />
-    <Folder Include="Views\Mascota\" />
-    <Folder Include="Views\Veterinario\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Referencias\Referencias.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\MasterMenuPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Veterinario\MainVeterinarioPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Mascota\MainMascotaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Cita\MainCitaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
