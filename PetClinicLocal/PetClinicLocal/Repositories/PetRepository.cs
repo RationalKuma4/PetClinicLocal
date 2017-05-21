@@ -31,7 +31,11 @@ namespace PetClinicLocal.Repositories
 
         public IEnumerable<Pet> VariasMascotas()
         {
-            throw new NotImplementedException();
+            return new List<Pet>
+            {
+                new Pet {OwnerUserId = 1,Age = 1,PetId = 1,Breed = "hola",Name = "hola"},
+                new Pet {OwnerUserId = 1,Age = 1,PetId = 1,Breed = "hola",Name = "hola2"}
+            };
         }
 
         public Pet Mascota(int id)

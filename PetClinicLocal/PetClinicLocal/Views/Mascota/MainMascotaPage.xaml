@@ -1,6 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PetClinicLocal.Views.Mascota.MainMascotaPage">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+             x:Class="PetClinicLocal.Views.Mascota.MainMascotaPage"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             Title="Mascotas">
+  <ContentPage.ToolbarItems></ContentPage.ToolbarItems>
+  <ListView ItemsSource="{Binding ListPets}"
+            BackgroundColor="#ecf0f1"
+            SeparatorVisibility="None"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <StackLayout Margin="6,4,6,4"
+                       BackgroundColor="White">
+            <Label Text="{Binding Name}"
+                   Margin="8"
+                   FontAttributes="Bold"
+                   FontSize="Medium"/>
+            <Label Text="{Binding Age}"/>
+          </StackLayout>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
 </ContentPage>

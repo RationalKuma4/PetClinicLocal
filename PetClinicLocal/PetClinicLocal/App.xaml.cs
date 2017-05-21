@@ -12,6 +12,7 @@ using PetClinicLocal.Views;
 using PetClinicLocal.Views.Cita;
 using PetClinicLocal.Views.Mascota;
 using PetClinicLocal.Views.Veterinario;
+using Prism.Logging;
 using Xamarin.Forms;
 
 namespace PetClinicLocal
@@ -22,8 +23,9 @@ namespace PetClinicLocal
 
         protected override void OnInitialized()
         {
-            InitializeComponent();
+            InitializeComponent(); 
             //NavigationService.NavigateAsync(ViewsNames.LoginPageName);
+            //NavigationService.NavigateAsync(ViewsNames.MasterMenuPageName);
             NavigationService.NavigateAsync(ViewsNames.MasterMenuPageName);
         }
 
@@ -46,6 +48,10 @@ namespace PetClinicLocal
             Container.RegisterTypeForNavigation<MainCitaPage>();
             Container.RegisterTypeForNavigation<MainMascotaPage>();
             Container.RegisterTypeForNavigation<MainVeterinarioPage>();
+
+            Container.RegisterTypeForNavigation<AddMascotaPage>();
+            Container.RegisterTypeForNavigation<MainMascotaPage>();
+            Container.RegisterTypeForNavigation<TabbedMascotaPage>();
         }
 
         private void RegisterServices()
@@ -70,5 +76,9 @@ namespace PetClinicLocal
             Container.RegisterType<IAppointmentWriter, AppointmentRepository>();
             Container.RegisterType<IAppointmentReader, AppointmentRepository>();
         }
+
+        public new static App Current => Application.Current as App;
+
+        public new ILoggerFacade Logger => base.Logger;
     }
 }

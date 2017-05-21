@@ -11,9 +11,6 @@ namespace PetClinicLocal.Views
         public const string LoginPageName = nameof(LoginPage);
 
         public const string MasterMenuPageName = nameof(MasterMenuPage);
-        public const string MainCitaPageName = nameof(MainCitaPage);
-        public const string MainMascotaPageName = nameof(MainMascotaPage);
-        public const string MainVeterinarioPageName = nameof(MainVeterinarioPage);
 
         #region Usuario
 
@@ -23,19 +20,21 @@ namespace PetClinicLocal.Views
 
         #region Mascota
 
-
+        public const string MainMascotaPageName = nameof(MainMascotaPage);
+        public const string AddMascotaPageName = nameof(AddMascotaPage);
+        public const string TabbedMascotaPageName = nameof(TabbedMascotaPage);
 
         #endregion
 
         #region Veterinario
 
-
+        public const string MainVeterinarioPageName = nameof(MainVeterinarioPage);
 
         #endregion
 
         #region Cita
 
-
+        public const string MainCitaPageName = nameof(MainCitaPage);
 
         #endregion
     }

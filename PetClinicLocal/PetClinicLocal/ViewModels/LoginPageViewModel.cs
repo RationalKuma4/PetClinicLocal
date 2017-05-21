@@ -4,6 +4,7 @@ using PetClinicLocal.Repositories.IOwner;
 using PetClinicLocal.Views;
 using Prism.Mvvm;
 using Prism.Navigation;
+using Prism.Services;
 using Xamarin.Forms;
 
 namespace PetClinicLocal.ViewModels
@@ -12,11 +13,13 @@ namespace PetClinicLocal.ViewModels
     {
         private readonly INavigationService _navigationService;
         private readonly IOwnerReader _ownerReader;
+        private readonly IPageDialogService _dialogService;
 
-        public LoginPageViewModel(INavigationService navigationService, IOwnerReader ownerReader)
+        public LoginPageViewModel(INavigationService navigationService, IOwnerReader ownerReader, IPageDialogService dialogService)
         {
             _navigationService = navigationService;
             _ownerReader = ownerReader;
+            _dialogService = dialogService;
         }
 
         public ICommand NavCommand
@@ -32,13 +35,19 @@ namespace PetClinicLocal.ViewModels
 
         public ICommand LoginCommand => new Command(() =>
         {
-            if (string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(Password)) return;
+            if (string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(Password))
+            {
+                _dialogService.DisplayAlertAsync("Error", "Esribe usuario y contraseña", "OK");
+                return;
+            }
+
             var user = _ownerReader.LoginUser(Username, Password);
 
-            if (user == null) return;
-            Settings.User = Username;
-            Settings.Password = Password;
-
+            if (user == null)
+            {
+                _dialogService.DisplayAlertAsync("Error", "Credendicales inavalidas", "OK");
+                return;
+            }
             //_navigationService.NavigateAsync(ViewsNames)
         });
 
