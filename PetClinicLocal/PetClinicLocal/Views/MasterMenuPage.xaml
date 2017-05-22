@@ -24,8 +24,6 @@
           <ListView.ItemTemplate>
             <DataTemplate>
               <ViewCell>
-
-                <!-- Main design for our menu items -->
                 <StackLayout VerticalOptions="FillAndExpand"
                              Orientation="Horizontal"
                              Padding="20,10,0,10"
