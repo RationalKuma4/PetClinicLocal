@@ -1,5 +1,4 @@
 ﻿using System.Windows.Input;
-using PetClinicLocal.Helpers;
 using PetClinicLocal.Repositories.IOwner;
 using PetClinicLocal.Views;
 using Prism.Mvvm;
@@ -48,7 +47,8 @@ namespace PetClinicLocal.ViewModels
                 _dialogService.DisplayAlertAsync("Error", "Credendicales inavalidas", "OK");
                 return;
             }
-            //_navigationService.NavigateAsync(ViewsNames)
+            App.User = user.UserName;
+            _navigationService.NavigateAsync(ViewsNames.MasterMenuPageName);
         });
 
         public void OnNavigatedFrom(NavigationParameters parameters)

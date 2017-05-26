@@ -1,6 +1,8 @@
 ﻿using System.Windows.Input;
+using PetClinicLocal.Helpers;
 using PetClinicLocal.Models;
 using PetClinicLocal.Repositories.IOwner;
+using PetClinicLocal.Views;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Xamarin.Forms;
@@ -37,7 +39,8 @@ namespace PetClinicLocal.ViewModels.Usuario
                 UserName = Username
             };
             _ownerWriter.RegistraUsuario(newUser);
-            _navigationService.NavigateAsync("");
+            Settings.Current.UserName = newUser.UserName;
+            _navigationService.NavigateAsync(ViewsNames.MasterMenuPageName);
         });
 
         private bool VerificaContrasena(string password, string passwordRep)

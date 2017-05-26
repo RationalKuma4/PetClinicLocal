@@ -1,6 +1,71 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PetClinicLocal.Views.Mascota.AddMascotaPage">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+             x:Class="PetClinicLocal.Views.Mascota.AddMascotaPage"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             Title="Agregar Mascota">
+  <ScrollView>
+    <StackLayout Spacing="15"
+                Margin="10"
+                Padding="20"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
+                Orientation="Vertical">
+      <Entry PlaceholderColor="Black"
+             Placeholder="Nombre"
+             FontAttributes="Italic"
+             HorizontalTextAlignment="Start"
+             Text="{Binding Name}"/>
+      <DatePicker VerticalOptions="CenterAndExpand"
+                  Date="{Binding DateOfBirth}">
+        <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+      </DatePicker>
+      <!--<Entry PlaceholderColor="Black"
+             Placeholder="Fecha de Nacimiento"
+             FontAttributes="Italic"
+             HorizontalTextAlignment="Start"
+             Text="{Binding DateOfBirth}"/>-->
+      <Entry PlaceholderColor="Black"
+             Placeholder="Lugar de Nacimiento"
+             FontAttributes="Italic"
+             HorizontalTextAlignment="Start"
+             Text="{Binding PlaceOfBirth}"/>
+      <Entry PlaceholderColor="Black"
+             Placeholder="Edad"
+             FontAttributes="Italic"
+             HorizontalTextAlignment="Start"
+             Text="{Binding Age}"/>
+      <Entry PlaceholderColor="Black"
+             Placeholder="Peso"
+             FontAttributes="Italic"
+             HorizontalTextAlignment="Start"
+             Text="{Binding Weight}"/>
+      <Entry PlaceholderColor="Black"
+             Placeholder="Altura"
+             FontAttributes="Italic"
+             HorizontalTextAlignment="Start"
+             Text="{Binding Height}"/>
+      <Entry PlaceholderColor="Black"
+             Placeholder="Sexo"
+             FontAttributes="Italic"
+             HorizontalTextAlignment="Start"
+             Text="{Binding Sex}"/>
+      <Entry PlaceholderColor="Black"
+             Placeholder="Raza"
+             FontAttributes="Italic"
+             HorizontalTextAlignment="Start"
+             Text="{Binding Breed}"/>
+      <Entry PlaceholderColor="Black"
+             Placeholder="Colores"
+             FontAttributes="Italic"
+             HorizontalTextAlignment="Start"
+             Text="{Binding Colours}"/>
+      <Button Text="Registrar"
+              BorderRadius="20"
+              BorderColor="Firebrick"
+              TextColor="Black"
+              Command="{Binding RegisterPetCommand}"/>
+    </StackLayout>
+  </ScrollView>
 </ContentPage>

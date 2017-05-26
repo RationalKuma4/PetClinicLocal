@@ -63,6 +63,8 @@
     <Compile Include="Repositories\OwnerRepository.cs" />
     <Compile Include="Repositories\PetRepository.cs" />
     <Compile Include="Repositories\VeterinarianRepository.cs" />
+    <Compile Include="ViewModels\Cita\AddCitaPageViewModel.cs" />
+    <Compile Include="ViewModels\Cita\MainCitaPageViewModel.cs" />
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\Mascota\AddMascotaPageViewModel.cs" />
@@ -70,6 +72,12 @@
     <Compile Include="ViewModels\Mascota\TabbedMascotaPageViewModel.cs" />
     <Compile Include="ViewModels\MasterMenuPageViewModel.cs" />
     <Compile Include="ViewModels\Usuario\ResgisterUserPageViewModel.cs" />
+    <Compile Include="ViewModels\Veterinario\AddVeterinarioPageViewModel.cs" />
+    <Compile Include="ViewModels\Veterinario\MainVeterinarioPageViewModel.cs" />
+    <Compile Include="ViewModels\Veterinario\TabbedVeterinarioPageViewModel.cs" />
+    <Compile Include="Views\Cita\AddCitaPage.xaml.cs">
+      <DependentUpon>AddCitaPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Cita\MainCitaPage.xaml.cs">
       <DependentUpon>MainCitaPage.xaml</DependentUpon>
     </Compile>
@@ -91,8 +99,14 @@
     <Compile Include="Views\Usuario\ResgisterUserPage.xaml.cs">
       <DependentUpon>ResgisterUserPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Veterinario\AddVeterinarioPage.xaml.cs">
+      <DependentUpon>AddVeterinarioPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Veterinario\MainVeterinarioPage.xaml.cs">
       <DependentUpon>MainVeterinarioPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Veterinario\TabbedVeterinarioPage.xaml.cs">
+      <DependentUpon>TabbedVeterinarioPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ViewsNames.cs" />
   </ItemGroup>
@@ -200,10 +214,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModels\Cita\" />
-    <Folder Include="ViewModels\Veterinario\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Referencias\Referencias.txt" />
   </ItemGroup>
@@ -237,6 +248,24 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\Mascota\AddMascotaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Veterinario\AddVeterinarioPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Veterinario\TabbedVeterinarioPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Cita\AddCitaPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

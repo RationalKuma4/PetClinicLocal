@@ -18,7 +18,7 @@ namespace PetClinicLocal.Models
         public decimal Height { get; set; }
         public string Sex { get; set; }
         public string Breed { get; set; }
-        public string Coulors { get; set; }
+        public string Colours { get; set; }
         public PetType PetType { get; set; }
         public string Observations { get; set; }
 

@@ -47,8 +47,6 @@ namespace PetClinicLocal.Repositories
             var owner = _service
                 .GetOwnerUsers()
                 .FirstOrDefault(u => u.UserName.Equals(usuario) && u.Password.Equals(password));
-            if (owner == null) return null;
-            Settings.User = owner.UserName;
             return owner;
         }
     }

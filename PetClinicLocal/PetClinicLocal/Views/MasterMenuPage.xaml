@@ -10,7 +10,7 @@
       <StackLayout BackgroundColor="#e8e8e8">
         <StackLayout BackgroundColor="#303F9F"
                      HeightRequest="75">
-          <Label Text="Some Text title"
+          <Label Text="Menu"
                  FontSize="20"
                  VerticalOptions="CenterAndExpand"
                  TextColor="White"
@@ -49,7 +49,9 @@
 
   <MasterDetailPage.Detail>
     <NavigationPage>
-
+      <StackLayout>
+        <Label Text="Hola"/>
+      </StackLayout>
     </NavigationPage>
   </MasterDetailPage.Detail>
 </MasterDetailPage>

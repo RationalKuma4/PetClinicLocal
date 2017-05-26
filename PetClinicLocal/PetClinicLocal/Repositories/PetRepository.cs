@@ -16,7 +16,7 @@ namespace PetClinicLocal.Repositories
 
         public void RegistraMascota(Pet pet)
         {
-            throw new NotImplementedException();
+            _service.AddPet(pet);
         }
 
         public Pet ModificaMascota(Pet pet)
@@ -31,11 +31,7 @@ namespace PetClinicLocal.Repositories
 
         public IEnumerable<Pet> VariasMascotas()
         {
-            return new List<Pet>
-            {
-                new Pet {OwnerUserId = 1,Age = 1,PetId = 1,Breed = "hola",Name = "hola"},
-                new Pet {OwnerUserId = 1,Age = 1,PetId = 1,Breed = "hola",Name = "hola2"}
-            };
+            return _service.GetPets();
         }
 
         public Pet Mascota(int id)

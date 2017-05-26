@@ -1,4 +1,7 @@
 // Helpers/Settings.cs
+using System;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using Plugin.Settings;
 using Plugin.Settings.Abstractions;
 
@@ -9,52 +12,55 @@ namespace PetClinicLocal.Helpers
     /// of your client applications. All settings are laid out the same exact way with getters
     /// and setters. 
     /// </summary>
-    public static class Settings
+    public class Settings : INotifyPropertyChanged
     {
+        private static Lazy<Settings> SettingsInstance = new Lazy<Settings>(() => new Settings());
+
+        public static Settings Current => SettingsInstance.Value;
+
+        private Settings() { }
+
         private static ISettings AppSettings
-        { get { return CrossSettings.Current; } }
-
-        public static string GeneralSettings
         {
-            get
-            {
-                return AppSettings.GetValueOrDefault<string>(SettingsKey, SettingsDefault);
-            }
-            set
-            {
-                AppSettings.AddOrUpdateValue<string>(SettingsKey, value);
-            }
+            get { return CrossSettings.Current; }
         }
 
-        #region Setting Constants
+        #region INotifyPropertyChanged
 
-        private const string SettingsKey = "settings_key";
-        private static readonly string SettingsDefault = string.Empty;
+        public event PropertyChangedEventHandler PropertyChanged;
 
-        private const string UserKey = "user_key";
-        private static readonly string UserKeyDefault = string.Empty;
-
-        private const string PasswordKey = "password_key";
-        private static readonly string PasswordKeyDefault = string.Empty;
-
-        #endregion
-
-
-        #region Setters and getters
-
-        public static string User
+        public void RaisePropertyChanged([CallerMemberName]string propertyName = null)
         {
-            get { return AppSettings.GetValueOrDefault(UserKey, UserKeyDefault); }
-            set { AppSettings.AddOrUpdateValue(UserKey, value); }
+            if (!string.IsNullOrWhiteSpace(propertyName))
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public static string Password
+        bool SetProperty<T>(T value, T defaultValue = default(T), [CallerMemberName] string propertyName = null)
         {
-            get { return AppSettings.GetValueOrDefault(PasswordKey, PasswordKeyDefault); }
-            set { AppSettings.AddOrUpdateValue(PasswordKey, value); }
+            if (string.IsNullOrWhiteSpace(propertyName)) return false;
+
+            if (Equals(AppSettings.GetValueOrDefault<T>(propertyName, defaultValue), value)) return false;
+
+            AppSettings.AddOrUpdateValue(propertyName, value);
+            RaisePropertyChanged(propertyName);
+
+            return true;
         }
 
-        #endregion
+        #endregion INotifyPropertyChanged
 
+        T GetProperty<T>(T defaultValue = default(T), [CallerMemberName]string propertyName = null)
+        {
+            if (string.IsNullOrWhiteSpace(propertyName))
+                return defaultValue;
+
+            return AppSettings.GetValueOrDefault(propertyName, defaultValue);
+        }
+
+        public string UserName
+        {
+            get { return GetProperty<string>(); }
+            set { SetProperty(value); }
+        }
     }
 }
