@@ -24,8 +24,6 @@ namespace PetClinicLocal
         {
             InitializeComponent();
             NavigationService.NavigateAsync(ViewsNames.LoginPageName);
-            //NavigationService.NavigateAsync(ViewsNames.MasterMenuPageName);
-            //NavigationService.NavigateAsync(ViewsNames.MasterMenuPageName);
         }
 
         protected override void RegisterTypes()
@@ -37,20 +35,24 @@ namespace PetClinicLocal
 
         private void RegisterNavigation()
         {
-            Container.RegisterTypeForNavigation<NavigationPage>();
-            Container.RegisterTypeForNavigation<MainPage>();
-
-            Container.RegisterTypeForNavigation<LoginPage>();
-            Container.RegisterTypeForNavigation<ResgisterUserPage>();
-
             Container.RegisterTypeForNavigation<MasterMenuPage>();
-            Container.RegisterTypeForNavigation<MainCitaPage>();
-            Container.RegisterTypeForNavigation<MainMascotaPage>();
+            Container.RegisterTypeForNavigation<MainPage>();
+            Container.RegisterTypeForNavigation<NavigationPage>();
+            Container.RegisterTypeForNavigation<LoginPage>();
+
+            Container.RegisterTypeForNavigation<AddVeterinarioPage>();
             Container.RegisterTypeForNavigation<MainVeterinarioPage>();
+            Container.RegisterTypeForNavigation<TabbedVeterinarioPage>();
+
+            Container.RegisterTypeForNavigation<ResgisterUserPage>();
 
             Container.RegisterTypeForNavigation<AddMascotaPage>();
             Container.RegisterTypeForNavigation<MainMascotaPage>();
             Container.RegisterTypeForNavigation<TabbedMascotaPage>();
+
+            Container.RegisterTypeForNavigation<AddCitaPage>();
+            Container.RegisterTypeForNavigation<MainCitaPage>();
+            Container.RegisterTypeForNavigation<TabbedCitaPage>();
         }
 
         private void RegisterServices()

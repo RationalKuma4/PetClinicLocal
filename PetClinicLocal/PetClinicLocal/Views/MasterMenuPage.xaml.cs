@@ -17,9 +17,9 @@ namespace PetClinicLocal.Views
 
             MenuList = new List<MasterPageItem>();
 
-            var page1 = new MasterPageItem { Title = "Veterinarios", Icon = "surre.png", TargetType = typeof(MainCitaPage) };
+            var page1 = new MasterPageItem { Title = "Veterinarios", Icon = "surre.png", TargetType = typeof(TabbedVeterinarioPage) };
             var page2 = new MasterPageItem { Title = "Mascotas", Icon = "paww.png", TargetType = typeof(TabbedMascotaPage) };
-            var page3 = new MasterPageItem { Title = "Citas", Icon = "cale.png", TargetType = typeof(MainVeterinarioPage) };
+            var page3 = new MasterPageItem { Title = "Citas", Icon = "cale.png", TargetType = typeof(TabbedCitaPage) };
 
             MenuList.Add(page1);
             MenuList.Add(page2);

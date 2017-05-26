@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace PetClinicLocal.Views.Veterinario
 {
-    public partial class TabbedVeterinarioPage : ContentPage
+    public partial class TabbedVeterinarioPage : TabbedPage
     {
         public TabbedVeterinarioPage()
         {
             InitializeComponent();
+            Children.Add(new MainVeterinarioPage());
+            Children.Add(new AddVeterinarioPage());
         }
     }
 }

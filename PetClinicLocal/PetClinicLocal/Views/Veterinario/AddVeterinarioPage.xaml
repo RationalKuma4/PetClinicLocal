@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PetClinicLocal.Views.Veterinario.AddVeterinarioPage">
+             x:Class="PetClinicLocal.Views.Veterinario.AddVeterinarioPage"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             Title="Agrega Veterinario">
   <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
 </ContentPage>

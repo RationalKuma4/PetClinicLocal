@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PetClinicLocal.Views.Veterinario.TabbedVeterinarioPage"
+             x:Class="PetClinicLocal.Views.Cita.TabbedCitaPage"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             Title="Menu Veterinarios">
+             Title="Menu Citas">
 </TabbedPage>

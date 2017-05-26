@@ -7,9 +7,8 @@ namespace PetClinicLocal.Views
 {
     public struct ViewsNames
     {
-        public const string MainPageName = nameof(MainPage);
         public const string LoginPageName = nameof(LoginPage);
-
+        public const string MainPageName = nameof(MainPage);
         public const string MasterMenuPageName = nameof(MasterMenuPage);
 
         #region Usuario
@@ -29,12 +28,16 @@ namespace PetClinicLocal.Views
         #region Veterinario
 
         public const string MainVeterinarioPageName = nameof(MainVeterinarioPage);
+        public const string TabbedVeterinarioPageName = nameof(TabbedVeterinarioPage);
+        public const string AddVeterinarioPageName = nameof(AddVeterinarioPage);
 
         #endregion
 
         #region Cita
 
         public const string MainCitaPageName = nameof(MainCitaPage);
+        public const string AddCitaPageName = nameof(AddCitaPage);
+        public const string TabbedCitaPageName = nameof(TabbedCitaPage);
 
         #endregion
     }

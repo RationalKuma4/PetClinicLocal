@@ -65,6 +65,7 @@
     <Compile Include="Repositories\VeterinarianRepository.cs" />
     <Compile Include="ViewModels\Cita\AddCitaPageViewModel.cs" />
     <Compile Include="ViewModels\Cita\MainCitaPageViewModel.cs" />
+    <Compile Include="ViewModels\Cita\TabbedCitaPageViewModel.cs" />
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\Mascota\AddMascotaPageViewModel.cs" />
@@ -80,6 +81,9 @@
     </Compile>
     <Compile Include="Views\Cita\MainCitaPage.xaml.cs">
       <DependentUpon>MainCitaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cita\TabbedCitaPage.xaml.cs">
+      <DependentUpon>TabbedCitaPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
@@ -214,7 +218,12 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Cita\TabbedCitaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Referencias\Referencias.txt" />
   </ItemGroup>
