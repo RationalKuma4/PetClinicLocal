@@ -63,6 +63,8 @@
     <Compile Include="Repositories\OwnerRepository.cs" />
     <Compile Include="Repositories\PetRepository.cs" />
     <Compile Include="Repositories\VeterinarianRepository.cs" />
+    <Compile Include="Services\AuthenticationService.cs" />
+    <Compile Include="Services\IAuthenticationService.cs" />
     <Compile Include="ViewModels\Cita\AddCitaPageViewModel.cs" />
     <Compile Include="ViewModels\Cita\MainCitaPageViewModel.cs" />
     <Compile Include="ViewModels\Cita\TabbedCitaPageViewModel.cs" />

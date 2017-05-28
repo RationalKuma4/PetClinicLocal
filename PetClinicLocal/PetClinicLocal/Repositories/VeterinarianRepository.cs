@@ -15,7 +15,7 @@ namespace PetClinicLocal.Repositories
 
         public void RegistraVeterinario(Veterinarian veterinarian)
         {
-            throw new System.NotImplementedException();
+            _service.AddVeterinarian(veterinarian);
         }
 
         public Veterinarian ModificaVeterinario(Veterinarian veterinarian)
@@ -30,7 +30,7 @@ namespace PetClinicLocal.Repositories
 
         public IEnumerable<Veterinarian> VariosVeterinarios()
         {
-            throw new System.NotImplementedException();
+            return _service.GetVeterinarians();
         }
 
         public Veterinarian Veterinarop(int id)

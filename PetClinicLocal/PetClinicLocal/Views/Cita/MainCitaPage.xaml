@@ -1,6 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PetClinicLocal.Views.Cita.MainCitaPage">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+             x:Class="PetClinicLocal.Views.Cita.MainCitaPage"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             Title="Citas">
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Text="Salir" Command="{Binding LogoutCommand}"/>
+  </ContentPage.ToolbarItems>
+  <ListView ItemsSource="{Binding ListAppointments}"
+            BackgroundColor="#ecf0f1"
+            SeparatorVisibility="None"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <StackLayout Margin="6,4,6,4"
+                       BackgroundColor="White">
+            <Label Text="{Binding DateAppointment}"
+                   Margin="8"
+                   FontAttributes="Bold"
+                   FontSize="Medium"/>
+            <Label Text="{Binding Observations}"/>
+            <Label Text="{Binding PetName}"/>
+          </StackLayout>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
 </ContentPage>

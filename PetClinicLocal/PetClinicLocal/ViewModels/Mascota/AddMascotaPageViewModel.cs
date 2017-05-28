@@ -2,7 +2,9 @@
 using System.Windows.Input;
 using PetClinicLocal.Models;
 using PetClinicLocal.Repositories.IPet;
+using PetClinicLocal.Services;
 using PetClinicLocal.Views;
+using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Prism.Services;
@@ -15,12 +17,16 @@ namespace PetClinicLocal.ViewModels.Mascota
         private readonly INavigationService _navigationService;
         private readonly IPetWriter _petWriter;
         private readonly IPageDialogService _dialogService;
+        private readonly IAuthenticationService _authenticationService;
 
-        public AddMascotaPageViewModel(INavigationService navigationService, IPetWriter petWriter, IPageDialogService dialogService)
+        public AddMascotaPageViewModel(INavigationService navigationService, IPetWriter petWriter, IPageDialogService dialogService,
+            IAuthenticationService authenticationService)
         {
             _navigationService = navigationService;
             _petWriter = petWriter;
             _dialogService = dialogService;
+            _authenticationService = authenticationService;
+            LogoutCommand = new DelegateCommand(OnLogoutCommandExecuted);
         }
 
         public ICommand RegisterPetCommand => new Command(() =>
@@ -43,6 +49,11 @@ namespace PetClinicLocal.ViewModels.Mascota
             _dialogService.DisplayAlertAsync("Mensaje", "Mascota registrada", "OK");
             _navigationService.NavigateAsync(ViewsNames.MasterMenuPageName);
         });
+
+        public DelegateCommand LogoutCommand { get; }
+
+        public void OnLogoutCommandExecuted() =>
+            _authenticationService.Logout();
 
         public void OnNavigatedFrom(NavigationParameters parameters)
         {

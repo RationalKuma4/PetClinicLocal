@@ -6,6 +6,7 @@ using PetClinicLocal.Repositories.IAppointment;
 using PetClinicLocal.Repositories.IOwner;
 using PetClinicLocal.Repositories.IPet;
 using PetClinicLocal.Repositories.IVeterinarian;
+using PetClinicLocal.Services;
 using PetClinicLocal.Views.Usuario;
 using Prism.Unity;
 using PetClinicLocal.Views;
@@ -61,6 +62,7 @@ namespace PetClinicLocal
             Container.RegisterType<IPetService, PetClinicDatabaseService>();
             Container.RegisterType<IVeterinarianService, PetClinicDatabaseService>();
             Container.RegisterType<IAppointmentService, PetClinicDatabaseService>();
+            Container.RegisterType<IAuthenticationService, AuthenticationService>();
         }
 
         private void RegisterRepositories()

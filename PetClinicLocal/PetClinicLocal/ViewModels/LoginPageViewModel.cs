@@ -60,14 +60,14 @@ namespace PetClinicLocal.ViewModels
         public void OnNavigatingTo(NavigationParameters parameters)
         { }
 
-        private string _username;
+        private string _username = "hola";
         public string Username
         {
             get { return _username; }
             set { SetProperty(ref _username, value); }
         }
 
-        private string _password;
+        private string _password = "hola";
         public string Password
         {
             get { return _password; }

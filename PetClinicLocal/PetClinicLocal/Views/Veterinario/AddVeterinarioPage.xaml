@@ -5,5 +5,61 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              Title="Agrega Veterinario">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Text="Salir" Command="{Binding LogoutCommand}" />
+  </ContentPage.ToolbarItems>
+  <ScrollView>
+    <StackLayout Spacing="15"
+                 Margin="10"
+                 Padding="20"
+                 VerticalOptions="FillAndExpand"
+                 HorizontalOptions="FillAndExpand"
+                 Orientation="Vertical">
+      <Entry PlaceholderColor="Black"
+             Placeholder="Nombre"
+             FontAttributes="Italic"
+             HorizontalTextAlignment="Start"
+             Text="{Binding Name}"/>
+      <Entry PlaceholderColor="Black"
+             Placeholder="Apellido"
+             FontAttributes="Italic"
+             HorizontalTextAlignment="Start"
+             Text="{Binding Lastname}"/>
+      <Entry PlaceholderColor="Black"
+             Placeholder="Nombre Clinica"
+             FontAttributes="Italic"
+             HorizontalTextAlignment="Start"
+             Text="{Binding ClinicName}"/>
+      <Entry PlaceholderColor="Black"
+             Placeholder="Direccion Clinica"
+             FontAttributes="Italic"
+             HorizontalTextAlignment="Start"
+             Text="{Binding ClinicAddress}"/>
+      <Entry PlaceholderColor="Black"
+             Placeholder="Horas de Servicio"
+             FontAttributes="Italic"
+             HorizontalTextAlignment="Start"
+             Text="{Binding ServiceHours}"/>
+      <Entry PlaceholderColor="Black"
+             Placeholder="Telefono"
+             FontAttributes="Italic"
+             HorizontalTextAlignment="Start"
+             Text="{Binding Telephone}"/>
+      <Entry PlaceholderColor="Black"
+             Placeholder="Email"
+             FontAttributes="Italic"
+             HorizontalTextAlignment="Start"
+             Text="{Binding Email}"/>
+      <Entry PlaceholderColor="Black"
+             Placeholder="Observaciones"
+             FontAttributes="Italic"
+             HorizontalTextAlignment="Start"
+             Text="{Binding Observations}"/>
+      <Button Text="Registrar"
+              BorderRadius="20"
+              BorderColor="Firebrick"
+              TextColor="Black"
+              Command="{Binding RegisterVetCommand}"/>
+    </StackLayout>
+  </ScrollView>
 </ContentPage>

@@ -5,5 +5,30 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              Title="Veterinarios">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Text="Salir" Command="{Binding LogoutCommand}" />
+  </ContentPage.ToolbarItems>
+  <ListView ItemsSource="{Binding ListVets}"
+            BackgroundColor="#ecf0f1"
+            SeparatorVisibility="None"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <StackLayout Margin="6,4,6,4"
+                       BackgroundColor="White">
+            <Label Text="{Binding Name}"
+                   Margin="8,2,8,4"
+                   FontAttributes="Bold"
+                   FontSize="Medium"/>
+            <Label Text="{Binding ClinicAddress}"
+                   FontAttributes="Italic"
+                   Margin="8,2,8,4"
+                   FontSize="Small"/>
+          </StackLayout>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
 </ContentPage>

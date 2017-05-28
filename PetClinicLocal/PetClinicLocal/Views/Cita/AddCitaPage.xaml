@@ -1,6 +1,55 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PetClinicLocal.Views.Cita.AddCitaPage">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+             x:Class="PetClinicLocal.Views.Cita.AddCitaPage"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             Title="Registra Citas">
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Text="Salir" Command="{Binding LogoutCommand}" />
+  </ContentPage.ToolbarItems>
+  <ScrollView>
+    <StackLayout Spacing="15"
+                 Margin="10"
+                 Padding="20"
+                 VerticalOptions="FillAndExpand"
+                 HorizontalOptions="FillAndExpand"
+                 Orientation="Vertical">
+      <Picker x:Name="PetPicker"
+              Title="Mascotas"
+              ItemsSource="{Binding ListPets}"
+              ItemDisplayBinding="{Binding Name}"
+              SelectedItem="{Binding Name}"/>
+      <Picker x:Name="VetPicker"
+              Title="Veterinarios"
+              ItemsSource="{Binding ListVets}"
+              ItemDisplayBinding="{Binding Name}"
+              SelectedItem="{Binding Name}"/>
+      <DatePicker VerticalOptions="CenterAndExpand"
+                  Date="{Binding DateAppointment}">
+        <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+      </DatePicker>
+      <Picker x:Name="TypeAppointment"
+              Title="Tipo de Cita">
+        <Picker.ItemsSource>
+          <x:Array Type="{x:Type x:String}">
+            <x:String>Revision</x:String>
+            <x:String>Vacuna</x:String>
+            <x:String>Operacion</x:String>
+            <x:String>Otro</x:String>
+          </x:Array>
+        </Picker.ItemsSource>
+      </Picker>
+      <Entry PlaceholderColor="Black"
+             Placeholder="Onservaciones"
+             FontAttributes="Italic"
+             HorizontalTextAlignment="Start"
+             Text="{Binding Observations}"/>
+      <Button Text="Registrar"
+              BorderRadius="20"
+              BorderColor="Firebrick"
+              TextColor="Black"
+              Command="{Binding RegisterPetCommand}"/>
+    </StackLayout>
+  </ScrollView>
 </ContentPage>
