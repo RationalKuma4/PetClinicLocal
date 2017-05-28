@@ -15,22 +15,23 @@
                  VerticalOptions="FillAndExpand"
                  HorizontalOptions="FillAndExpand"
                  Orientation="Vertical">
-      <Picker x:Name="PetPicker"
-              Title="Mascotas"
-              ItemsSource="{Binding ListPets}"
-              ItemDisplayBinding="{Binding Name}"
-              SelectedItem="{Binding Name}"/>
-      <Picker x:Name="VetPicker"
-              Title="Veterinarios"
-              ItemsSource="{Binding ListVets}"
-              ItemDisplayBinding="{Binding Name}"
-              SelectedItem="{Binding Name}"/>
+      <Entry Placeholder="Nombre Mascota"
+             PlaceholderColor="Black"
+             FontAttributes="Italic"
+             HorizontalOptions="Start"
+             Text="{Binding PetName}"/>
+      <Entry Placeholder="Nombre Veterinario"
+             PlaceholderColor="Black"
+             FontAttributes="Italic"
+             HorizontalOptions="Start"
+             Text="{Binding VetName}"/>
       <DatePicker VerticalOptions="CenterAndExpand"
                   Date="{Binding DateAppointment}">
         <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
       </DatePicker>
       <Picker x:Name="TypeAppointment"
-              Title="Tipo de Cita">
+              Title="Tipo de Cita"
+              SelectedItem="{Binding TipoCita}">
         <Picker.ItemsSource>
           <x:Array Type="{x:Type x:String}">
             <x:String>Revision</x:String>
@@ -49,7 +50,7 @@
               BorderRadius="20"
               BorderColor="Firebrick"
               TextColor="Black"
-              Command="{Binding RegisterPetCommand}"/>
+              Command="{Binding RegisterAppointmentCommand}"/>
     </StackLayout>
   </ScrollView>
 </ContentPage>

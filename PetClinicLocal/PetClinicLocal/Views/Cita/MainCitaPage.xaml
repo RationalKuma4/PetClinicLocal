@@ -8,7 +8,7 @@
   <ContentPage.ToolbarItems>
     <ToolbarItem Text="Salir" Command="{Binding LogoutCommand}"/>
   </ContentPage.ToolbarItems>
-  <ListView ItemsSource="{Binding ListAppointments}"
+  <ListView ItemsSource="{Binding Appointments}"
             BackgroundColor="#ecf0f1"
             SeparatorVisibility="None"
             HorizontalOptions="FillAndExpand"
@@ -16,12 +16,8 @@
     <ListView.ItemTemplate>
       <DataTemplate>
         <ViewCell>
-          <StackLayout Margin="6,4,6,4"
-                       BackgroundColor="White">
-            <Label Text="{Binding DateAppointment}"
-                   Margin="8"
-                   FontAttributes="Bold"
-                   FontSize="Medium"/>
+          <StackLayout >
+            <Label Text="{Binding DateAppointment, StringFormat='{0:MMMM dd, yyyy}'}"/>
             <Label Text="{Binding Observations}"/>
             <Label Text="{Binding PetName}"/>
           </StackLayout>

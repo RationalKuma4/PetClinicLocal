@@ -10,13 +10,13 @@
   </ContentPage.ToolbarItems>
   <ListView ItemsSource="{Binding ListVets}"
             BackgroundColor="#ecf0f1"
-            SeparatorVisibility="None"
+            SeparatorVisibility="Default"
             HorizontalOptions="FillAndExpand"
             VerticalOptions="FillAndExpand">
     <ListView.ItemTemplate>
       <DataTemplate>
         <ViewCell>
-          <StackLayout Margin="6,4,6,4"
+          <!--<StackLayout Margin="6,4,6,4"
                        BackgroundColor="White">
             <Label Text="{Binding Name}"
                    Margin="8,2,8,4"
@@ -26,6 +26,21 @@
                    FontAttributes="Italic"
                    Margin="8,2,8,4"
                    FontSize="Small"/>
+          </StackLayout>-->
+          <StackLayout Margin="6,4,6,4"
+                       Orientation="Vertical">
+            <Label Text="{Binding Name}"
+                   TextColor="Black"
+                   HorizontalOptions="Start"
+                   FontAttributes="Bold"/>
+            <Label Text="{Binding ClinicAddress}"
+                   HorizontalOptions="Start"
+                   TextColor="DarkSlateGray"
+                   FontAttributes="Italic"/>
+            <Label Text="{Binding ClinicName}"
+                   HorizontalOptions="Start"
+                   TextColor="DarkSlateGray"
+                   FontAttributes="Italic"/>
           </StackLayout>
         </ViewCell>
       </DataTemplate>

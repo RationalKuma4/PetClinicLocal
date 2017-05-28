@@ -16,7 +16,7 @@ namespace PetClinicLocal.Repositories
 
         public void RegistraCita(Appointment appointment)
         {
-            throw new NotImplementedException();
+            _service.AddAppointment(appointment);
         }
 
         public Appointment ModificaCita(Appointment appointment)
@@ -31,7 +31,7 @@ namespace PetClinicLocal.Repositories
 
         public IEnumerable<Appointment> VariasCitas()
         {
-            throw new NotImplementedException();
+            return _service.GetAppointments();
         }
 
         public Appointment Cita(int id)
