@@ -56,6 +56,12 @@ namespace PetClinicLocal.ViewModels.Cita
 
         public ICommand RegisterAppointmentCommand => new Command(() =>
         {
+            if (string.IsNullOrWhiteSpace(PetName) || string.IsNullOrWhiteSpace(VetName))
+            {
+                _dialogService.DisplayAlertAsync("Mensaje", "Introduzca el nombre de la mascota y del veterinario", "OK");
+                return;
+            }
+
             var petId = _petReader
                 .VariasMascotas()
                 .FirstOrDefault(p => p.Name.Contains(PetName));
